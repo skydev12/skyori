@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Sertifikat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px; /* Memberi ruang di bawah navigasi */
+      gap: 20px;
+    }
+
+    /* Efek Fade-in untuk halaman */
+    body {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Navigasi di Pojok Kanan Atas */
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 15px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffcc00;
+      transition: width 0.3s;
+      margin: auto;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Grid Kartu */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+    }
+
+    /* Kartu Sertifikat Kaca */
+    .card {
+      background: rgba(255, 255, 255, 0.2); /* Transparansi */
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px); /* Efek blur */
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.5); /* Garis batas transparan */
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card img {
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card h3 {
+      font-size: 22px;
+      color: #fff; /* Warna teks putih untuk kontras */
+      margin-top: 10px;
+      transition: color 0.3s;
+    }
+
+    .card:hover h3 {
+      color: #ff6600;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        height: auto;
+        padding: 20px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigasi -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tentang.html">Tentang</a>
+    <a href="portofolio.html">sertifikat</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+
+ <!-- Kontainer Kartu -->
+<div class="card-container">
+  <div class="card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <img src="https://firebasestorage.googleapis.com/v0/b/risky-f2de4.appspot.com/o/kegiatan%2Fexis.jpg?alt=media&token=e75b4da1-1b26-4e26-a3d9-692ba8e87ab7" alt="Sertifikat 1">
+    <h3>Sertifikat Exis</h3>
+  </div>
+  <div class="card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <img src="https://firebasestorage.googleapis.com/v0/b/risky-f2de4.appspot.com/o/kegiatan%2FScreenshot_2024-09-20-06-44-57-240_com.google.android.apps.docs-edit.jpg?alt=media&token=e4c0d652-bd6e-4aa2-980b-fbf6c8ff700c" alt="Sertifikat 2">
+    <h3>Sertifikat Epsilon</h3>
+  </div>
+  <div class="card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <img src="https://firebasestorage.googleapis.com/v0/b/risky-f2de4.appspot.com/o/kegiatan%2Fsigma.jpg?alt=media&token=0bd55e62-6c5f-4443-b695-2cd52513c82a" alt="Sertifikat 3">
+    <h3>Sertifikat Sigma</h3>
+  </div>
+  <div class="card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <img src="https://firebasestorage.googleapis.com/v0/b/risky-f2de4.appspot.com/o/kegiatan%2FRisky%20Darlis_page-0001.jpg?alt=media&token=9d6b140a-8ae2-42f8-bc7d-7390ab8aa78e" alt="Sertifikat 4">
+    <h3>Sertifikat Web Design</h3>
+  </div>
+  <div class="card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <img src="https://firebasestorage.googleapis.com/v0/b/risky-f2de4.appspot.com/o/kegiatan%2FRISKY%20DARLIS_page-0001.jpg?alt=media&token=8e4a8925-282a-47ed-b87b-e3bdcb02d079" alt="Sertifikat 5">
+    <h3>Sertifikat Eunoia</h3>
+  </div>
+  <div class="card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <img src="https://firebasestorage.googleapis.com/v0/b/risky-f2de4.appspot.com/o/kegiatan%2FRisky%20Darlis.png?alt=media&token=86aefe02-33c8-43b9-ac35-0bfe790a5ec7" alt="Sertifikat 6">
+    <h3>Sertifikat Imapar</h3>
+  </div>
+  <div class="card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <img src="https://firebasestorage.googleapis.com/v0/b/risky-f2de4.appspot.com/o/kegiatan%2FCamScanner%2020-09-2024%2007.01.jpg?alt=media&token=9da54d29-4644-47a3-b46d-50069747377d" alt="Sertifikat 7">
+    <h3>Sertifikat Magang (kunango jantan)</h3>
+  </div>
+  <div class="card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <img src="https://firebasestorage.googleapis.com/v0/b/risky-f2de4.appspot.com/o/kegiatan%2F62.png?alt=media&token=deda0f48-600b-400e-804d-4f5a9ec5538c" alt="Sertifikat 7">
+    <h3>Sertifikat FET</h3>
+  </div>
+  <div class="card" onmousemove="tiltEffect(event, this)" onmouseleave="resetTilt(this)">
+    <img src="https://firebasestorage.googleapis.com/v0/b/risky-f2de4.appspot.com/o/kegiatan%2Fdesigncanva_page-0001.jpg?alt=media&token=a2a1f673-7298-40f6-859b-76a4de685acc" alt="Sertifikat 7">
+    <h3>Sertifikat Canva</h3>
+  </div>
+</div>
+
+  <script>
+    // Efek Tilt Mengikuti Gerakan Kursor
+    function tiltEffect(event, card) {
+      const cardRect = card.getBoundingClientRect();
+      const centerX = cardRect.left + cardRect.width / 2;
+      const centerY = cardRect.top + cardRect.height / 2;
+      const mouseX = event.clientX - centerX;
+      const mouseY = event.clientY - centerY;
+
+      const rotateX = (mouseY / cardRect.height) * 10;
+      const rotateY = -(mouseX / cardRect.width) * 10;
+
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    }
+
+    function resetTilt(card) {
+      card.style.transform = 'rotateX(0) rotateY(0)';
+    }
+  </script>
+
+</body>
+</html>

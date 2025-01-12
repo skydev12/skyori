@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Kontak Saya</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: url('bgkon.jpg') no-repeat center center;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+      position: relative;
+      overflow: hidden; /* Mencegah scroll */
+    }
+
+    /* Navigasi */
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    h1 {
+      color: white;
+      font-size: 36px;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    p {
+      color: #d3d3d3;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* Media Sosial */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .social-icon {
+      position: relative;
+      background: rgba(255, 255, 255, 0.1); /* Efek kaca */
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .social-icons a {
+      font-size: 48px;
+      color: white;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+      color: #00ffff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsif */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+      p {
+        font-size: 16px;
+      }
+      nav a {
+        font-size: 16px;
+      }
+      .social-icons a {
+        font-size: 36px; /* Ukuran ikon lebih kecil di perangkat kecil */
+      }
+    }
+
+    /* Partikel */
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall linear forwards; 
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0; /* Memudarkan partikel saat jatuh */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigasi -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tentang.html">Tentang</a>
+    <a href="portofolio.html">Portofolio</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+
+  <!-- Header Kontak -->
+  <h1>Hubungi Saya</h1>
+  <p>Terhubung dengan saya di media sosial atau kunjungi website saya!</p>
+
+  <!-- Icon Media Sosial -->
+  <div class="social-icons">
+    <div class="social-icon">
+      <a href="https://www.facebook.com" target="_blank">
+        <span class="material-icons">facebook</span>
+      </a>
+    </div>
+    <div class="social-icon">
+      <a href="https://www.instagram.com" target="_blank">
+        <span class="material-icons">photo_camera</span>
+      </a>
+    </div>
+    <div class="social-icon">
+      <a href="https://twitter.com" target="_blank">
+        <span class="material-icons">chat</span>
+      </a>
+    </div>
+    <div class="social-icon">
+      <a href="https://github.com/xrymods" target="_blank">
+        <span class="material-icons">code</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Website -->
+  <div class="social-icons">
+    <div class="social-icon">
+      <a href="https://risky.web.id" target="_blank">
+        <span class="material-icons">public</span>
+      </a>
+    </div>
+    <div class="social-icon">
+      <a href="https://riskyx.my.id" target="_blank">
+        <span class="material-icons">public</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Partikel -->
+  <script>
+    const createParticle = () => {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      const size = Math.random() * 10 + 5; // Ukuran partikel
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${Math.random() * 100}vw`;
+      particle.style.animationDuration = `${Math.random() * 2 + 2}s`;
+      particle.style.top = `-${size}px`; // Mulai dari atas layar
+      document.body.appendChild(particle);
+
+      particle.addEventListener('animationend', () => {
+        particle.remove();
+      });
+    };
+
+    setInterval(createParticle, 300);
+  </script>
+
+</body>
+</html>
